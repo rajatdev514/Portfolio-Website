@@ -7,25 +7,25 @@ const items = [
     id: 1,
     title: "Personal Portfolio Website",
     img: "/portfolio1.jpg",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam minus ipsum molestiae eligendi dolores id repudiandae nisi incidunt enim labore modi possimus praesentium repellat, vitae blanditiis autem neque corporis molestias!",
+    desc: "Innovatively built personal portfolio website showcasing proficiency in ReactJS and diverse libraries for a dynamic online presence.",
   },
   {
     id: 2,
     title: "HOD Portfolio Website",
     img: "/portfolio2.png",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam minus ipsum molestiae eligendi dolores id repudiandae nisi incidunt enim labore modi possimus praesentium repellat, vitae blanditiis autem neque corporis molestias!",
+    desc: "Developed and designed a dynamic portfolio website for the Head of IT Department utilizing React.js and various libraries.",
   },
   {
     id: 3,
     title: "Herbal Med Online",
     img: "/portfolio3.jpg",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam minus ipsum molestiae eligendi dolores id repudiandae nisi incidunt enim labore modi possimus praesentium repellat, vitae blanditiis autem neque corporis molestias!",
+    desc: "Contributed to the development and integration of frontend elements, components and APIs as well as co-authored a published research paper detailing the project's innovations.",
   },
   {
     id: 4,
     title: "Dynamic Weather Application",
     img: "/portfolio4.png",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam minus ipsum molestiae eligendi dolores id repudiandae nisi incidunt enim labore modi possimus praesentium repellat, vitae blanditiis autem neque corporis molestias!",
+    desc: "Developed a dynamic weather application leveraging Node.js and API integration for accurate real-time weather forecasts of various locations.",
   },
 ];
 

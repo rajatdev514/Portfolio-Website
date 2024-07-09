@@ -20,6 +20,7 @@
     flex-direction: column;
     gap: 40px;
 
+
     @include mobile {
         gap: 20px;
         text-align: center;
@@ -91,4 +92,20 @@ svg {
         height: 200px;
     }
 }
+}
+
+.github-icon {
+    width: 50px;
+}
+
+.insta-icon {
+    width: 40px;
+}
+
+.linkedin-icon {
+    width: 40px;
+}
+
+a{
+    margin: 20px;
 }

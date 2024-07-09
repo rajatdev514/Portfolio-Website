@@ -67,6 +67,11 @@ const Contact = () => {
           <h2>Contact</h2>
           <span>+91 9822964723</span>
         </motion.div>
+        <motion.div className="social">
+        <a href="https://www.instagram.com/__rajatt_/" target="_blank"><img className="insta-icon" src="/instagram.png" alt="" /></a>
+        <a href="https://github.com/rajatdev514" target="_blank"><img className="github-icon" src="/github1.png" alt="" /></a>
+        <a href="https://www.linkedin.com/in/rajat-mahajan-074b13229/" target="_blank"><img className="linkedin-icon" src="/linkedin.png" alt="" /></a>
+      </motion.div>
       </motion.div>
       <div className="formcontainer">
         <motion.div
@@ -101,8 +106,12 @@ const Contact = () => {
           {success && "Success"}
         </motion.form>
       </div>
+      
     </motion.div>
   );
 };
 
 export default Contact;
+
+
+// j7ngq7ApM36IRe
