@@ -4,7 +4,7 @@ Welcome to my personal portfolio website, developed using Vite, React.js, JavaSc
 
 ## Demo
 
-Check out the live demo of the website: [Portfolio Website](https://rajatmahajantech.netlify.app/)
+Check out the live demo of the website: [Portfolio Website](https://rajatmahajan-tech.netlify.app/)
 
 ## Features
 
