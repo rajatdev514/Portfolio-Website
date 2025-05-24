@@ -4,12 +4,12 @@
     margin: 4rem 0;
     position: relative;
 
-    h5{
+    .technical{
         font-size: 2rem;
         font-weight: 800;
         margin-bottom: 1rem;
         margin-left: 2rem;
-        padding-top: 50px;
+        padding-top: 100px;
 
         @include mobile {
             // font-size: 72px;

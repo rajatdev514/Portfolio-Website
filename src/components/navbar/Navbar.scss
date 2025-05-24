@@ -1,36 +1,101 @@
 @import '../../app.scss';
 
-.navbar{
-    height: 100px;
+.navbar {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-    .wrapper {
-        max-width: 1366px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
+  /* Default transparent background */
+  background-color: transparent;
 
-        @include mobile {
-            justify-content: center;
-            padding: 50px;
-        }
+  /* Add shadow and background color when scrolled */
+  &.scrolled {
+    background-color: rgba(12, 12, 29, 0.85); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
 
-        span{
-            font-size: larger;
-            font-weight: bolder;
-            margin-left: 80px;
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
 
-            @include mobile {
-                display: none;
-            }
-        }
-    
-        .social {
-            display: flex;
-            gap: 20px;
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+
+      @include mobile {
+        font-size: 1.2rem;
+      }
     }
 
-    
+    .social {
+      display: flex;
+      gap: 20px;
+
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #ffffff;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #007bff;
+        }
+
+        @include mobile {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      .social {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .social.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: #0c0c1d;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: lightgray;
+      transition: 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
 }

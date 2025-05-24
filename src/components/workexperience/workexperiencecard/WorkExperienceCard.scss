@@ -1,14 +1,11 @@
 @import '../../../app.scss';
 
-img {
-    width: 1.5rem;
-}
-
 .work-experience-card {
     background: #130f2a; border-radius: 0.65rem; 
     border: 1.5px solid #675169;
     padding: 2rem;
-    margin: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 
     @include mobile {
         scroll-snap-type: none;
