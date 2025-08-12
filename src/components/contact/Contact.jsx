@@ -1,8 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import "./Contact.scss";
 import { useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
-
+import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -23,8 +22,8 @@ const Contact = () => {
   const ref = useRef();
 
   const formRef = useRef();
-  const [error, setError] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -32,16 +31,16 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_n8da365', 'template_skpf3qc', formRef.current, {
-        publicKey: '-oay8RuWXR7nzb07B',
+      .sendForm("service_n8da365", "template_skpf3qc", formRef.current, {
+        publicKey: "-oay8RuWXR7nzb07B",
       })
       .then(
         (result) => {
-          setSuccess(true)
+          setSuccess(true);
         },
         (error) => {
-          setError(true)
-        },
+          setError(true);
+        }
       );
   };
 
@@ -54,7 +53,7 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div className="textcontainer" variants={variants}>
-        <motion.h1 variants={variants}>Let's Connect </motion.h1>
+        <motion.h1 variants={variants}>Lets Connect </motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>Mail</h2>
           <span>rajatmahajan.tech@gmail.com</span>
@@ -68,10 +67,16 @@ const Contact = () => {
           <span>+91 9822964723</span>
         </motion.div>
         <motion.div className="social">
-        <a href="https://www.instagram.com/__rajatt_/" target="_blank"><img className="insta-icon" src="/instagram.png" alt="" /></a>
-        <a href="https://github.com/rajatdev514" target="_blank"><img className="github-icon" src="/github1.png" alt="" /></a>
-        <a href="https://www.linkedin.com/in/rajat-mahajan-074b13229/" target="_blank"><img className="linkedin-icon" src="/linkedin.png" alt="" /></a>
-      </motion.div>
+          <a href="https://www.instagram.com/__rajatt_/">
+            <img className="insta-icon" src="/instagram.png" alt="" />
+          </a>
+          <a href="https://github.com/rajatdev514">
+            <img className="github-icon" src="/github1.png" alt="" />
+          </a>
+          <a href="https://www.linkedin.com/in/rajat-mahajan-074b13229/">
+            <img className="linkedin-icon" src="/linkedin.png" alt="" />
+          </a>
+        </motion.div>
       </motion.div>
       <div className="formcontainer">
         <motion.div
@@ -92,26 +97,24 @@ const Contact = () => {
           </svg>
         </motion.div>
         <motion.form
-        ref={formRef}
-        onSubmit={sendEmail}
+          ref={formRef}
+          onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name"/>
-          <input type="email" required placeholder="Email" name="email"/>
-          <textarea rows={8} placeholder="Message" name="message"/>
+          <input type="text" required placeholder="Name" name="name" />
+          <input type="email" required placeholder="Email" name="email" />
+          <textarea rows={8} placeholder="Message" name="message" />
           <button>Submit</button>
           {error && "Error"}
           {success && "Success"}
         </motion.form>
       </div>
-      
     </motion.div>
   );
 };
 
 export default Contact;
-
 
 // j7ngq7ApM36IRe

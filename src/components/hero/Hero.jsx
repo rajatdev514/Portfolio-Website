@@ -54,7 +54,7 @@ const Hero = () => {
           <motion.h1 variants={textVariants}>Web Developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <a
-              href="https://drive.google.com/file/d/1Jk5jqyFYjP3mDYvN2t0UdNP115i_e8RN/view?usp=sharing"
+              href="https://drive.google.com/file/d/1lECYQg6jEBzvveR0Kw7NojIIVy9mFwdi/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="button-link" // Add a class for styling

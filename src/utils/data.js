@@ -3,32 +3,33 @@ export const SKILLS = [
     title: "Frontend",
     icon: "/frontend-icon.png",
     skills: [
-      { skill: "HTML5", percentage: "95%" },
-
-      { skill: "CSS3 (Sass/SCSS)", percentage: "90%" },
-
-      { skill: "JavaScript", percentage: "95%" },
-
-      { skill: "React.js", percentage: "95%" },
+      { skill: "Angular" },
+      { skill: "React.js" },
+      { skill: "Bootstrap" },
+      { skill: "JavaScript" },
+      { skill: "TypeScript" },
     ],
   },
   {
     title: "Backend",
     icon: "/backend-icon.png",
     skills: [
-      { skill: "Node.js", percentage: "85%" },
-      { skill: "Express.js", percentage: "80%" },
-      { skill: "MongoDB", percentage: "80%" },
+      { skill: "Node.js" },
+      { skill: "Express.js" },
+      { skill: "MongoDB" },
+      { skill: "RESTful APIs" },
+      { skill: "NET Web API" },
+      { skill: "JWT Authentication" },
     ],
   },
   {
     title: "Tools",
     icon: "/tools.png",
     skills: [
-      { skill: "Git & GitHub", percentage: "85%" },
-      { skill: "Visual Studio Code", percentage: "95%" },
-      // { skill: "Webpack", percentage: "60%"},
-      { skill: "Responsive Design", percentage: "90%" },
+      { skill: "Git & GitHub" },
+      { skill: "Visual Studio Code" },
+      { skill: "Postman" },
+      { skill: "JMeter" },
     ],
   },
 
@@ -36,10 +37,11 @@ export const SKILLS = [
     title: "Soft Skills",
     icon: "/skills.png",
     skills: [
-      { skill: "Communication", percentage: "95%" },
-      { skill: "Problem-solving", percentage: "85%" },
-      { skill: "Adaptibility", percentage: "90%" },
-      { skill: "Organizational Skills", percentage: "90%" },
+      { skill: "Communication" },
+      { skill: "Problem-solving" },
+      { skill: "Adaptibility" },
+      { skill: "Organizational Skills" },
+      { skill: "Industry Best Practices" },
     ],
   },
 ];
