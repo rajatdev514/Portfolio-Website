@@ -51,7 +51,10 @@ const Hero = () => {
           <motion.h1 className="name" variants={textVariants}>
             RAJAT MAHAJAN
           </motion.h1>
-          <motion.h1 variants={textVariants}>Web Developer</motion.h1>
+          <motion.h1 variants={textVariants}>
+            MERN & MEAN | Angular | Java, C# | .NET Web API |
+          </motion.h1>
+          <motion.h1 variants={textVariants}>DSA Enthusiast</motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <a
               href="https://drive.google.com/file/d/1lECYQg6jEBzvveR0Kw7NojIIVy9mFwdi/view?usp=sharing"

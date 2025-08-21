@@ -1,33 +1,39 @@
 import { useState } from "react";
 import "./About.scss";
 import { SKILLS } from "../../utils/data";
-import Aboutcard from "./aboutcard/Aboutcard";
+import AboutCard from "./aboutcard/AboutCard";
 import AboutCardInfo from "./aboutcardinfo/AboutCardInfo";
 
 const About = () => {
-  const [selectedSkill, setSelectedSkills] = useState(SKILLS[0]);
+  const [selectedSkill, setSelectedSkill] = useState(SKILLS[0]);
 
   const handleSelectSkill = (data) => {
-    setSelectedSkills(data);
+    setSelectedSkill(data);
   };
 
   return (
-    <div className="skills-container">
-      <h5 className="technical">Technical Proficiency</h5>
+    <section className="skills-container">
+      <div className="section-header">
+        <div className="header-content">
+          <h2 className="section-title">Technical Proficiency</h2>
+        </div>
+      </div>
 
       <div className="skills-content">
-        <div className="skills"></div>
-        {SKILLS.map((item) => (
-          <Aboutcard
-            key={item.title}
-            iconUrl={item.icon}
-            title={item.title}
-            isActive={selectedSkill.title === item.title}
-            onClick={() => {
-              handleSelectSkill(item);
-            }}
-          />
-        ))}
+        <div className="skills-grid">
+          {SKILLS.map((item) => (
+            <AboutCard
+              key={item.title}
+              iconUrl={item.icon}
+              title={item.title}
+              isActive={selectedSkill.title === item.title}
+              onClick={() => {
+                handleSelectSkill(item);
+              }}
+            />
+          ))}
+        </div>
+
         <div className="skills-info">
           <AboutCardInfo
             heading={selectedSkill.title}
@@ -35,7 +41,12 @@ const About = () => {
           />
         </div>
       </div>
-    </div>
+
+      <div className="background-elements">
+        <div className="bg-blur bg-blur-1"></div>
+        <div className="bg-blur bg-blur-2"></div>
+      </div>
+    </section>
   );
 };
 

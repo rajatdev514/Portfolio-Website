@@ -1,59 +1,258 @@
-.experience-container {
-  margin: 4rem;
-  position: relative;
+@import '../../app.scss';
 
-  .work {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 3rem;
-      margin-left: 2rem;
-      padding-top: 100px;
+.achievements-container {
+  padding: 2rem 4rem;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #6751b9, transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
   }
 }
 
-.arrow-left,
-.arrow-right {
-      width: 2.2rem;
-      height: 2.2rem;
-      display: flex;
-      // margin: 1rem;
-      align-items: center;
-      justify-content: center;
+.achievements-header {
+  margin-bottom: 3rem;
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .title-section {
+    flex: 1;
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(103, 81, 185, 0.15);
       color: #6751b9;
-      border-radius: 0.65rem;
-      border: 1.5px solid #6751b9;
-      background: #130f2a;
-      position: absolute;
-      top: 55%;
-      z-index: 2;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(103, 81, 185, 0.3);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      margin-top: 3rem;
+      background: linear-gradient(135deg, #ffffff, #6751b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #a0a0a0;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+  }
+
+  .navigation-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .slide-counter {
+      display: flex;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      color: #6751b9;
+
+      .current {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+
+      .separator {
+        margin: 0 0.5rem;
+        color: #666;
+      }
+
+      .total {
+        color: #888;
+      }
+    }
+
+    .nav-arrows {
+      display: flex;
+      gap: 0.5rem;
+
+      .nav-arrow {
+        width: 3rem;
+        height: 3rem;
+        background: rgba(103, 81, 185, 0.1);
+        border: 1.5px solid rgba(103, 81, 185, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #6751b9;
+
+        &:hover {
+          background: rgba(103, 81, 185, 0.2);
+          border-color: #6751b9;
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.achievements-content {
+  flex: 1;
+  position: relative;
+  
+  .slider-container {
+    height: 100%;
+    
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+    
+    .slick-slide {
+      padding: 0 1rem;
+    }
+  }
+
+  .progress-indicators {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+
+    .progress-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(103, 81, 185, 0.3);
       cursor: pointer;
+      transition: all 0.3s ease;
 
-      span {
+      &.active {
+        background: #6751b9;
+        transform: scale(1.2);
+      }
+
+      &:hover {
+        background: rgba(103, 81, 185, 0.6);
+      }
+    }
+  }
+}
+
+
+
+// Mobile Responsiveness
+@include mobile {
+  .achievements-container {
+    padding: 1rem;
+    height: auto;
+    min-height: 100vh;
+
+    .achievements-header {
+      margin-bottom: 2rem;
+
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .title-section {
+        .section-title {
           font-size: 2rem;
-          font-weight: 500;
-      }
-}
+        }
 
-.arrow-left {
-  left: -2rem;
-  margin-left: 3rem;
-}
-
-.arrow-right {
-  right: -2rem;
-  margin-right: 3rem;
-}
-
-@media (max-width: 768px) {
-
-  .experience-container {
-          padding-bottom: 1px;
-      
-      .work {
-          font-size: 1.5rem;
-          margin-top: 60rem;
+        .section-subtitle {
+          font-size: 0.9rem;
+        }
       }
 
+      .navigation-controls {
+        align-self: flex-end;
+        gap: 1rem;
 
+        .slide-counter {
+          font-size: 1rem;
+
+          .current {
+            font-size: 1.1rem;
+          }
+        }
+
+        .nav-arrows .nav-arrow {
+          width: 2.5rem;
+          height: 2.5rem;
+
+          i {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .achievements-stats {
+      gap: 2rem;
+      margin-top: 1rem;
+
+      .stat-item .stat-number {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .achievements-container {
+    padding: 2rem;
+
+    .achievements-header {
+      .title-section .section-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    .achievements-stats {
+      gap: 3rem;
+    }
   }
 }

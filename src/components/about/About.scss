@@ -1,124 +1,257 @@
 @import '../../app.scss';
 
 .skills-container {
-    margin: 4rem 0;
-    position: relative;
+  padding: 2rem 4rem;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .technical{
-        font-size: 2rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        margin-left: 2rem;
-        padding-top: 100px;
+.section-header {
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
 
-        @include mobile {
-            // font-size: 72px;
-            text-align: center;
-        }
+  .header-content {
+    max-width: 600px;
+    margin: 0 auto;
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(103, 81, 185, 0.15);
+      color: #6751b9;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(103, 81, 185, 0.3);
     }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff, #6751b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #a0a0a0;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
 }
 
-.skills-container::after,
-.skills-container::before{
-    content: " ";
-    width: 28rem;
-    height: 28rem;
-    border-radius: 28.125rem;
-    background: #7c66e3;
-    position: absolute;
-    z-index: -1;
-    filter: blur(200px);
-
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.skills-container::after{
-    top: -3rem;
-    left: -5rem;
-}
-
-.skills-container::before{
-    background: #9e51b9;
-    bottom: 0rem;
-    right: 0rem;
-}
-
-.skills-content{
-    display: flex;
-    align-items: flex-start;
-    gap: 3rem;
-    margin-top: 8rem;
-
-    
-}
-
-.skills {
-    // flex: 1;
-    display: grid;
-    grid-gap: 3rem;
-    grid-template-columns: repeat(2, 1fr);
-    
+.skills-grid {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   gap: 2rem;
 }
 
 .skills-info {
-    margin-right: 2rem;
-    flex: 1;
-    
+//   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width  : 1025px) {
-    .skills{
-        padding-left: 1rem;
-    }
-    .skills,
-    .skills-content {
-        grid-gap: 2rem;
-    }
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+
+  .bg-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .bg-blur-1 {
+    width: 28rem;
+    height: 28rem;
+    background: #7c66e3;
+    top: -10%;
+    left: -15%;
+    animation-delay: 0s;
+  }
+
+  .bg-blur-2 {
+    width: 24rem;
+    height: 24rem;
+    background: #9e51b9;
+    bottom: -10%;
+    right: -15%;
+    animation-delay: 3s;
+  }
 }
 
-// @media (max-width  : 738px) {
-//     .skills{
-//         padding-left: 2px;
-//     }
-//     .skills,
-//     .skills-content {
-//         grid-gap: 2px;
-//     }
-// }
-
-@media (max-width: 768px) {
-    .skills-content{
-        flex-direction: column-reverse;
-        gap: 1rem;
-        margin: 20px;
-        justify-content: center;
-        text-align: center; 
-    }
-
-    .skills,
-    .skills-info{
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .skills-container h5 {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .skills-container::after,
-    .skills-container::before{
-        width: 18rem;
-        height: 18rem;
-        justify-content: center;
-        text-align: center;
-    }
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px);
+  }
 }
 
-@media (max-width: 600px) {
-    .skills-container{
-        padding: 0;
+// Tablet styles
+@include tablet {
+  .skills-container {
+    padding: 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+
+    .header-content {
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem;
+      }
     }
+  }
+
+  .skills-content {
+    gap: 3rem;
+  }
+
+  .skills-grid {
+    gap: 1.5rem;
+  }
+
+  .background-elements {
+    .bg-blur-1 {
+      width: 22rem;
+      height: 22rem;
+    }
+
+    .bg-blur-2 {
+      width: 18rem;
+      height: 18rem;
+    }
+  }
+}
+
+// Mobile styles
+@include mobile {
+  .skills-container {
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+
+    .header-content {
+      .section-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skills-grid {
+    order: 2;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skills-info {
+    order: 1;
+  }
+
+  .background-elements {
+    .bg-blur-1 {
+      width: 16rem;
+      height: 16rem;
+      top: 10%;
+      left: -20%;
+    }
+
+    .bg-blur-2 {
+      width: 14rem;
+      height: 14rem;
+      bottom: 10%;
+      right: -20%;
+    }
+  }
+}
+
+// Extra small mobile
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 0.5rem;
+  }
+
+  .section-header {
+    .header-content {
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .skills-content {
+    gap: 1.5rem;
+  }
+
+  .background-elements {
+    .bg-blur-1,
+    .bg-blur-2 {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
 }
