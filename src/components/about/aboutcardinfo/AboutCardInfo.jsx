@@ -1,4 +1,4 @@
-import "./AboutCardInfo.scss";
+import "./Aboutcardinfo.scss";
 
 const AboutCardInfo = ({ heading, skills }) => {
   return (
