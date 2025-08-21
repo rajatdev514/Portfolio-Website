@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./About.scss";
 import { SKILLS } from "../../utils/data";
-import AboutCard from "./aboutcard/AboutCard";
+import AboutCard from "../about/aboutcard/AboutCard";
 import AboutCardInfo from "./aboutcardinfo/AboutCardInfo";
 
 const About = () => {
